@@ -4,7 +4,7 @@
 #include<stdio.h>
 #include<dos.h>
  
-class hotel
+class hostel
 {
     int room_no;
     char name[30];
@@ -22,7 +22,7 @@ class hotel
     void delete_rec(int);    //to delete the record
 };
  
-void hotel::main_menu()
+void hostel::main_menu()
 {
     int choice;
     
@@ -61,7 +61,7 @@ void hotel::main_menu()
     }
 }
  
-void hotel::add()
+void hostel::add()
 {
     clrscr();
     int r,flag;
@@ -93,7 +93,7 @@ void hotel::add()
     fout.close();
 }
  
-void hotel::display()
+void hostel::display()
 {
     clrscr();
     ifstream fin("Record.dat",ios::in);
@@ -126,7 +126,7 @@ void hotel::display()
     fin.close();
 }
  
-void hotel::rooms()
+void hostel::rooms()
 {
     clrscr();
     ifstream fin("Record.dat",ios::in);
@@ -146,7 +146,7 @@ void hotel::rooms()
     fin.close();
 }
  
-void hotel::edit()
+void hostel::edit()
 {
     clrscr();
     int choice,r;
@@ -176,7 +176,7 @@ void hotel::edit()
     getch();
 }
  
-int hotel::check(int r)
+int hostel::check(int r)
 {
     int flag=0;
     ifstream fin("Record.dat",ios::in);
@@ -194,7 +194,7 @@ int hotel::check(int r)
     return(flag);
 }
  
-void hotel::modify(int r)
+void hostel::modify(int r)
 {
     long pos,flag=0;
     fstream file("Record.dat",ios::in|ios::out|ios::binary);
@@ -228,7 +228,7 @@ void hotel::modify(int r)
     file.close();
 }
  
-void hotel::delete_rec(int r)
+void hostel::delete_rec(int r)
 {
     int flag=0;
     char ch;
@@ -269,20 +269,20 @@ void hotel::delete_rec(int r)
  
 void main()
 {
-    hotel h;
+    hostel h;
     textmode(C80);
     textbackground(WHITE);
     textcolor(RED);
     
     clrscr();
     cout<<"\n\t\t\t****************************";
-    cout<<"\n\t\t\t* HOTEL MANAGEMENT PROJECT *";
+    cout<<"\n\t\t\t* HOSTEL MANAGEMENT PROJECT *";
     cout<<"\n\t\t\t****************************";
     sleep(2);
     
     cout<<"\n\n\n\n\t\tMade By:";
     sleep(2);
-    cout<<" The Crazy Programmer";
+    cout<<" Nikhil";
     sleep(2);
     cout<<"\n\n\n\n\n\t\t\t\tPress any key to continue!!";
     getch();
